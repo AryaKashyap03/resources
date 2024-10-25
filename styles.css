@@ -1,0 +1,455 @@
+/* styles.css */
+
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    /* background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); */
+    background-color: #8470FF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  /* Container */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Heading */
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 50%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Categories */
+  .categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .categories button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .categories button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+  }
+  
+  /* Resources List */
+  .resources-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  
+  .resource-card {
+    background-color: pink;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: box-shadow 0.3s; 
+  }
+  
+  .resource-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+    0px 8px 20px rgba(225, 225, 225, 0.7),   /* Bottom shadow */
+    0px -8px 20px rgba(225, 225, 225, 0.7),  /* Top shadow */
+    8px 0px 20px rgba(225, 225, 225, 0.7),   /* Right shadow */
+    -8px 0px 20px rgba(225, 225, 225, 0.7);   /* Left shadow */
+  }
+  
+  .resource-card h3 {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: 1000;
+  }
+  
+  .resource-card p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 1000;
+  }
+  
+  .resource-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .resource-card a:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+  }
+  /*animated text*/
+  .animated-text {
+    color: #333;
+    font-size: 50px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black; /* Cursor */
+    width: fit-content; /* Change width as the text types out */
+    margin: 0 auto;
+    animation: typing 4s steps(32, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Typing effect */
+  @keyframes typing {
+    from {
+      width: 0; /* Start with no text */
+    }
+    to {
+      width: 32ch; /* Gradually show all text */
+    }
+  }
+  
+  /* Blinking cursor effect */
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black; /* Cursor visible */
+    }
+  }
+  
+  
+  
+/*carousel*/
+.anonCaro h2{
+  margin-left: 190px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  text-decoration: underline;
+}
+.carousel-container {
+  width: 80vw; /* Set a fixed width for the carousel */
+  margin: 40px auto; /* Center the carousel */
+  position: relative; /* Positioning context for controls */
+  overflow: hidden; /* Hide overflow to prevent content spill */
+  max-height: 500px; /* Optional: prevent it from exceeding this height */
+}
+
+.carousel {
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  position: relative; /* Positioning context for control buttons */
+}
+
+.carousel-image {
+  width: 100%; /* Make the image fit the carousel width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 500px; /* Set a max height to keep the layout consistent */
+  object-fit: cover; /* Maintain aspect ratio, crop excess */
+}
+
+.carousel-control {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Rounded buttons */
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 30px; /* Larger font size for arrow */
+  padding: 10px; /* Add some padding */
+  position: absolute; /* Positioning context for controls */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Centering adjustment */
+}
+
+.carousel-control.prev {
+  left: 10px; /* Position left control */
+}
+
+.carousel-control.next {
+  right: 10px; /* Position right control */
+}
+
+.carousel-indicators {
+  display: flex; /* Align indicators horizontally */
+  justify-content: center; /* Center indicators */
+  margin-top: 10px; /* Space above indicators */
+}
+
+.indicator {
+  width: 10px; /* Width of indicator */
+  height: 10px; /* Height of indicator */
+  border-radius: 50%; /* Circular indicators */
+  background-color: #ddd; /* Default background */
+  border: none; /* Remove border */
+  margin: 0 5px; /* Space between indicators */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.indicator.active {
+  background-color: #007bff; /* Active indicator color */
+}
+.carousel-control-prev, .carousel-control-next, .carousel-indicators {
+  display: none; /* Hides the arrows and dots */
+}
+
+/*for faq*/
+.faq-cards {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.card{
+  margin-top: 150px;
+  /* background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 5%, #C850C0 46%, #FFCC70 170%); */
+  background-color: #8470FF;
+  border: none;
+}
+.faq-card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.7);
+  width: 300px; /* Set fixed width for the card */
+  margin-bottom: 20px; /* Add margin to space between rows */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.15), -12px -12px 24px rgba(255, 255, 255, 0.85);
+}
+
+.faq-card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.faq-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.faq-card-text {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.faq-card-updated {
+  font-size: 12px;
+  color: #999;
+}
+/*for banner*/
+.banner-container {
+  margin-top: 150px;
+  position: relative;
+  background-image: url('../assets/images/mh1.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  min-width: 100vw;
+  padding: 60px 0; /* Adjust padding as needed */
+  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-heading {
+  font-size: 36px; /* Adjust size as needed */
+  color: #ffffff; /* Change to your preferred color */
+  margin-bottom: 10px;
+  font-weight: 1000;
+}
+
+.banner-subheading {
+  font-size: 20px; /* Adjust size as needed */
+  color: #ffffff; /* Change to your preferred color */
+  margin-bottom: 40px; /* Space between heading and cards */
+  font-weight:bolder;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.banner-card {
+  background-color: #cff86d; /* Card background color */
+  padding: 30px;
+  border-radius: 0; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 20em; /* Adjust width for bigger cards */
+  height: 20em;
+  
+}
+
+.banner-card:hover {
+  transform: translateY(-10px); /* Raise card on hover */
+}
+
+.card-title {
+  font-size: 24px; /* Title font size */
+  color: #333; /* Change to your preferred color */
+}
+
+.card-description {
+  font-size: 16px; /* Description font size */
+  color: #555; /* Change to your preferred color */
+}
+
+/*image grid*/
+.image-grid-container {
+  position: relative;
+  width: 70vw; /* Width of the grid */
+  height: 400px; /* Set height as needed */
+  margin: 0 auto; /* Center the grid */
+  overflow: hidden; /* Hide overflow */
+}
+
+.grid-image {
+  position: absolute;
+  width: 100%; /* Images take full width */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.img1 {
+  z-index: 1; /* Behind */
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
+
+.img2 {
+  z-index: 2; /* Middle */
+  left: 30%; /* Adjust for overlap */
+  bottom: 10%; /* Adjust for overlap */
+  width: 300px;
+}
+
+.img3 {
+  z-index: 3; /* Front */
+  left: 15%; /* Adjust for position */
+  top: 10%; /* Above */
+  width: 300px;
+}
+
+/* Optional hover effect */
+.grid-image:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.head-image-grid-container{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
+}
+.head-image-grid-container h1{
+  align-self: center;
+  position: relative;
+  font-size:5rem;
+  color: whitesmoke;
+}
+/*footer css*/
+.footer {
+  color: #333; /* Text color */
+  text-align: center; /* Centered text */
+  padding: 40px; /* Increased spacing for thickness */
+  position: relative; /* Position relative to the flow */
+  width: 100%; /* Full width */
+  bottom: 0; /* Stick to the bottom */
+  box-shadow: 10 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  }
+.footer-content1{
+  margin-left: 20px;
+}
+.footer-content2 > .footer-links{
+  display: flex;
+  list-style-type: none;
+}
+.footer-links li > a{
+  color: #333;
+  padding-right: 20px;
+}
+/*tips and tricks*/
+.tips-container {
+  padding: 40px;
+  text-align: left;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tips-container h2 {
+  font-size: 38px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.tips-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tips-container ul li {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #444;
+  line-height: 1.6;
+  padding: 10px;
+}
+
+.tips-container ul li strong {
+  color: rgb(53, 39, 39); /* Matches body background's color scheme */
+}
